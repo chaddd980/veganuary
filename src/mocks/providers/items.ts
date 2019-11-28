@@ -1,68 +1,52 @@
 import { Injectable } from '@angular/core';
 
-import { Item } from '../../models/item';
+import { Meal } from '../../models/meal';
 
 @Injectable()
 export class Items {
-  items: Item[] = [];
+  meals: Meal[] = [];
 
   defaultItem: any = {
-    "name": "Burt Bear",
-    "profilePic": "assets/img/speakers/bear.jpg",
-    "about": "Burt is a Bear.",
+    "mealPic": "assets/img/tofu_scramble.jpg",
+    "mealBlurb": "This is a quick and easy high protein, high nutrient meal that tastes great and will keep you satiated for a long time.",
+    "mealTitle": "Tofu Scramble",
+    "meal": "Breakfast",
   };
 
 
   constructor() {
-    let items = [
+    let meals = [
       {
-        "name": "Burt Bear",
-        "profilePic": "assets/img/speakers/bear.jpg",
-        "about": "Burt is a Bear."
+        "mealPic": "assets/img/tofu_scramble.jpg",
+        "mealBlurb": "This is a quick and easy high protein, high nutrient meal that tastes great and will keep you satiated for a long time.",
+        "mealTitle": "Tofu Scramble",
+        "meal": "Breakfast",
       },
       {
-        "name": "Charlie Cheetah",
-        "profilePic": "assets/img/speakers/cheetah.jpg",
-        "about": "Charlie is a Cheetah."
+        "mealPic": "assets/img/tofu_scramble.jpg",
+        "mealBlurb": "This is a quick and easy high protein, high nutrient meal that tastes great and will keep you satiated for a long time.",
+        "mealTitle": "Tofu Scramble",
+        "meal": "Lunch",
       },
       {
-        "name": "Donald Duck",
-        "profilePic": "assets/img/speakers/duck.jpg",
-        "about": "Donald is a Duck."
-      },
-      {
-        "name": "Eva Eagle",
-        "profilePic": "assets/img/speakers/eagle.jpg",
-        "about": "Eva is an Eagle."
-      },
-      {
-        "name": "Ellie Elephant",
-        "profilePic": "assets/img/speakers/elephant.jpg",
-        "about": "Ellie is an Elephant."
-      },
-      {
-        "name": "Molly Mouse",
-        "profilePic": "assets/img/speakers/mouse.jpg",
-        "about": "Molly is a Mouse."
-      },
-      {
-        "name": "Paul Puppy",
-        "profilePic": "assets/img/speakers/puppy.jpg",
-        "about": "Paul is a Puppy."
+        "mealPic": "assets/img/tofu_scramble.jpg",
+        "mealBlurb": "This is a quick and easy high protein, high nutrient meal that tastes great and will keep you satiated for a long time.",
+        "mealTitle": "Tofu Scramble",
+        "meal": "Dinner",
       }
     ];
 
-    for (let item of items) {
-      this.items.push(new Item(item));
+    for (let meal of meals) {
+      this.meals.push(new Meal(meal));
     }
   }
 
   query(params?: any) {
     if (!params) {
-      return this.items;
+      return this.meals;
     }
 
-    return this.items.filter((item) => {
+    return this.meals.filter((item) => {
       for (let key in params) {
         let field = item[key];
         if (typeof field == 'string' && field.toLowerCase().indexOf(params[key].toLowerCase()) >= 0) {
@@ -75,11 +59,11 @@ export class Items {
     });
   }
 
-  add(item: Item) {
-    this.items.push(item);
+  add(item: Meal) {
+    this.meals.push(item);
   }
 
-  delete(item: Item) {
-    this.items.splice(this.items.indexOf(item), 1);
+  delete(item: Meal) {
+    this.meals.splice(this.meals.indexOf(item), 1);
   }
 }

@@ -1,0 +1,48 @@
+page-meal-of-day {
+  .tabs-div{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    border-top: 2px solid lightgrey;
+  }
+  .tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 6vh;
+  }
+  .active{
+    font-weight: bold;
+    background: #daffc2;
+  }
+  .tab1{
+    border-right: 2px solid lightgrey;
+  }
+  .toolbar-md{
+    padding-bottom: 0;
+    padding-left: 0;
+    min-height: 19vh;
+  }
+  ion-title{
+
+  }
+  .header-info{
+    height: 13vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-info p{
+    margin-top: 0;
+  }
+  .cardStyle{
+    padding: 3vw;
+    margin-top: 4vh;
+  }
+  h1{
+    margin-bottom: 1vh !important;
+  }
+
+}

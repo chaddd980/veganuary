@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <div class="header-info">
+      <h1>{{today | date}}</h1>
+      <p>Current Streak: {{streak}}</p>
+    </div>
+    <div class="tabs-div">
+      <div class="tab tab1 active">
+        <p>Meal of The Day</p>
+      </div>
+      <div class="tab">
+        <p>Feed</p>
+      </div>
+    </div>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let meal of currentMeals">
+    <ion-card class="cardStyle">
+      <h1>{{meal.meal}}</h1>
+      <img class="cardImg" src={{meal.mealPic}}>
+      <ion-card-content>
+        <ion-card-title>
+          {{meal.mealTitle}}
+        </ion-card-title>
+        <p>
+          {{meal.mealBlurb}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
